@@ -11,7 +11,7 @@ typedef std::vector<int> IntArray;
 ///class State
 ///A class to hold the state of the puzzle. 
 ///The state is represented by a simple one dimensional array of integers.
-///The value of o represents empty slot.
+///The value of 0 represents empty slot.
 class State
 {
 public:
