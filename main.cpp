@@ -66,10 +66,24 @@ public:
   {
     return (a._state == b._state);
   }
+  ///not equal to operator. This will check item by item.
+  friend bool operator != (const State& a, const State& b)
+  {
+    return (a._state != b._state);
+  }
   /// find the index of the empty slot
   inline int findZeroIndex() const
   {
-    for (int i = 0; i < (int)_state.size(); ++i)
+    return FindEmptyTileIndex();
+    //for (int i = 0; i < (int)_state.size(); ++i)
+    //  if (_state[i] == 0) return i;
+
+    //return (int)_state.size();
+  }
+  /// find the index of the empty slot
+  inline int FindEmptyTileIndex() const
+  {
+    for (unsigned int i = 0; i < _state.size(); ++i)
       if (_state[i] == 0) return i;
 
     return (int)_state.size();
